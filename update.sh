@@ -13,7 +13,7 @@ if [ -n "$output" ]; then
   $BUILDBOT checkconfig master.cfg
   # checkconfig exits 0 if everything is ok.
   if [ $? -eq 0 ]; then
-    $BUILDBOT reconfig
+    $BUILDBOT reconfig || $BUILDBOT restart
   else
     echo "Buildbot config is bad";
   fi;
