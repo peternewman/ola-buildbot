@@ -228,8 +228,8 @@ class SlaveStore(object):
   """Holds the BuildSlave objects."""
   def __init__(self, slave_config):
     self._slaves = []
-    for platform, platform_spec in slave_config.iteritems():
-      for arch, slave_names in platform_spec.iteritems():
+    for platform, platform_spec in slave_config.items():
+      for arch, slave_names in platform_spec.items():
         for slave in slave_names:
           self._slaves.append(BuildSlave(platform, arch, slave))
 
