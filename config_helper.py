@@ -23,7 +23,7 @@ def LoadConfig(config_file):
   global_dict = {
     'Slave': SlaveConfig,
   }
-  execfile(config_file, global_dict, config)
+  exec(open(config_file).read(), global_dict, config)
   return config
 
 
